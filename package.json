@@ -1,0 +1,19 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "image-to-base64": "^2.0.1",
+    "js-base64": "^2.5.2",
+    "node-base64-image": "^1.0.7",
+    "nodemon": "^2.0.2",
+    "novelcovid": "^1.0.4",
+    "twit": "^2.2.11"
+  }
+}
