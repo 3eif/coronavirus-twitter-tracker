@@ -4,5 +4,5 @@ module.exports = {
     consumer_secret: 'consumer secret',
     access_token: 'token',
     access_token_secret: 'token secret',
-    tweetRateMinutes: '10'
+    rate: '3600000'
 }
