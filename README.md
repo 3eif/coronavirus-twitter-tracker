@@ -1,6 +1,10 @@
 # CoronavirusTwitterTracker
 Tweets the latest statistics for COVID19 every X amount of seconds.
 
+<div align="center">
+    <img src="./example.PNG" /><br>
+</div>
+
 ### Prerequisites
 
 - NodeJS
