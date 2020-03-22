@@ -37,7 +37,7 @@ async function tweet() {
 
     let unitedStates = `\n\n🗽 United States Statistics:\nConfirmed Cases: ${country.cases} (+${country.todayCases})\nActive Cases: ${country.active}\nRecovered: ${country.recovered}\nDeaths: ${country.deaths} (+${country.todayDeaths})`;
     let worldWide = `🌍 Worldwide Coronavirus Statistics\nConfirmed Cases: ${confirmed} (+${todayCases})\nActive Cases: ${active}\nRecovered: ${recovered}\nDeaths: ${deaths} (+${todayDeaths})`
-    let hashtags = `\n\n#covid #coronavirus #corona #covid19`
+    let hashtags = `\n\n#coronavirus #corona #covid19`
 
     T.post('media/upload', { media_data: wikiImage }, function (err, data, response) {
         let mediaIdStr = data.media_id_string
