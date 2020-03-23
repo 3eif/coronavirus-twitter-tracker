@@ -19,6 +19,8 @@ Open terminal and run the following commands:
 git clone https://github.com/Tetracyl/CoronavirusTwitterTracker CoronavirusTwitterTracker
 cd CoronavirusTwitterTracker
 npm install
+cd node_modules
+git clone https://github.com/Tetracyl/coronacord-api-wrapper
 ```
 
 ### Getting Started
