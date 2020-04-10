@@ -14,7 +14,7 @@
     "node-base64-image": "^1.0.7",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.2",
-    "novelcovid": "^1.0.4",
+    "novelcovid": "^1.1.4",
     "twit": "^2.2.11"
   }
 }

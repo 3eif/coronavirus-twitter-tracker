@@ -1,6 +1,6 @@
 const Twit = require('twit');
 const config = require('./config.js')
-const novelcovid = require("coronacord-api-wrapper");
+const { NovelCovid } = require("novelcovid");
 const image2base64 = require('image-to-base64');
 
 let T = new Twit({
@@ -17,8 +17,10 @@ tweet()
 async function tweet() {
     const wikiImage = await image2base64("https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/COVID-19_Outbreak_World_Map.svg/330px-COVID-19_Outbreak_World_Map.svg.png");
 
-    const stats = await novelcovid.all();
-    const countryStats = await novelcovid.countries();
+    const track = new NovelCovid();
+
+    const stats = await track.all();
+    const countryStats = await track.countries();
 
     let confirmed = stats.cases;
     let active = stats.cases - stats.deaths - stats.recovered;
@@ -29,11 +31,8 @@ async function tweet() {
     countryStats.forEach(country => { todayDeaths += country.todayDeaths; todayCases += country.todayCases; });
 
     const countryInput = "USA";
-    var countries = await novelcovid.countries();
-    const objCountries = {};
-    countries.forEach(c => objCountries[c.country] = c);
-    countries = objCountries;
-    const country = countries[countryInput];
+    const country = await track.countries('USA');
+    console.log(country);
 
     let unitedStates = `\n\n🗽 United States Statistics:\nConfirmed Cases: ${country.cases.toLocaleString()} (+${country.todayCases.toLocaleString()})\nRecovered: ${country.recovered.toLocaleString()}\nDeaths: ${country.deaths.toLocaleString()} (+${country.todayDeaths})`;
     let worldWide = `🌍 Worldwide Coronavirus Statistics\nConfirmed Cases: ${confirmed.toLocaleString()} (+${todayCases.toLocaleString()})\nRecovered: ${recovered.toLocaleString()}\nDeaths: ${deaths} (+${todayDeaths.toLocaleString()})`
