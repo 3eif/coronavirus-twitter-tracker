@@ -35,7 +35,7 @@ async function tweet() {
     console.log(country);
 
     let unitedStates = `\n\n🗽 United States Statistics:\nConfirmed Cases: ${country.cases.toLocaleString()} (+${country.todayCases.toLocaleString()})\nRecovered: ${country.recovered.toLocaleString()}\nDeaths: ${country.deaths.toLocaleString()} (+${country.todayDeaths})`;
-    let worldWide = `🌍 Worldwide Coronavirus Statistics\nConfirmed Cases: ${confirmed.toLocaleString()} (+${todayCases.toLocaleString()})\nRecovered: ${recovered.toLocaleString()}\nDeaths: ${deaths} (+${todayDeaths.toLocaleString()})`
+    let worldWide = `🌍 Worldwide Coronavirus Statistics\nConfirmed Cases: ${confirmed.toLocaleString()} (+${todayCases.toLocaleString()})\nRecovered: ${recovered.toLocaleString()}\nDeaths: ${deaths.toLocaleString()} (+${todayDeaths.toLocaleString()})`
     let hashtags = `\n\n#coronavirus #corona #covid19`
 
     T.post('media/upload', { media_data: wikiImage }, function (err, data, response) {
